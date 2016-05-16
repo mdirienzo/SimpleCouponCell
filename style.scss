@@ -119,7 +119,7 @@ body {
       -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
 
-      height: $font-size*$line-height*$lines-to-show - $coupon-padding/2 ; /* Fallback for non-webkit */
+      height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
       font-size: $font-size;
       line-height: $line-height;
 

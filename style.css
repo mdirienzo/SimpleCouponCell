@@ -73,7 +73,7 @@ body {
       display: -webkit-box;
       -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
-      height: 5.75em;
+      height: 6em;
       /* Fallback for non-webkit */
       font-size: 1em;
       line-height: 1;
