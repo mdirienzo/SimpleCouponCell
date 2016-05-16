@@ -1,0 +1,94 @@
+/*
+  Ideally, this would be placed inside of it's own coupon.scss file and
+  inserted in partially in the main styleguide as required.
+*/
+body {
+  color: #757575;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  background-color: #F7F7F7; }
+
+.button {
+  color: #F7F7F7;
+  background-color: #757575;
+  border-radius: 0.5em;
+  border-color: none;
+  border-style: none; }
+  .button:hover {
+    background-color: #424242;
+    color: #e8e8e8; }
+  .button:active {
+    background-color: #424242;
+    color: #a8a8a8; }
+
+.coupon-cell {
+  border-radius: 0.5em;
+  max-width: 600px;
+  border-width: 0.15em;
+  overflow: hidden;
+  border-style: solid;
+  border-color: #757575; }
+  .coupon-cell .coupon-header {
+    color: white;
+    background-color: #757575;
+    height: 3em;
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .coupon-cell .coupon-footer {
+    height: 3em;
+    background-color: #B5B5B5;
+    position: relative;
+    border-style: solid;
+    border: none;
+    border-top: 0.15em solid #757575; }
+    .coupon-cell .coupon-footer .button {
+      position: absolute;
+      right: 0.5em;
+      top: 0.5em;
+      bottom: 0.5em;
+      margin: auto;
+      vertical-align: middle;
+      height: 80%;
+      width: 150px; }
+  .coupon-cell .coupon-content {
+    padding: 0.5em;
+    min-height: 6em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; }
+    .coupon-cell .coupon-content .coupon-content-block {
+      min-width: 6em;
+      height: 6em;
+      margin: 0.5em; }
+    .coupon-cell .coupon-content .coupon-content-text {
+      display: block;
+      flex: 1 1 50%;
+      max-height: 6em;
+      display: block;
+      /* Fallback for non-webkit */
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      height: 5.75em;
+      /* Fallback for non-webkit */
+      font-size: 1em;
+      line-height: 1;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .coupon-cell .coupon-content .coupon-content-text:after {
+        letter-spacing: .10em;
+        content: "...";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0 10px 5px 45px; }
+    .coupon-cell .coupon-content img {
+      border-radius: 0.5em;
+      max-height: 6em;
+      max-width: 6em; }
+
+/*# sourceMappingURL=style.css.map */

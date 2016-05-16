@@ -1,0 +1,147 @@
+
+/*
+  Ideally, this would be placed inside of it's own coupon.scss file and
+  inserted in partially in the main styleguide as required.
+*/
+
+
+
+$primary-color-dark: #757575;
+$primary-color-medium: #959595;
+$primary-color-light: #B5B5B5;
+$background-color: #F7F7F7;
+
+$button-inactive-color: $primary-color-dark;
+
+$coupon-content-height: 6em;
+$coupon-header-height: 3em;
+
+$coupon-border-radius: 0.5em;
+$coupon-padding: 0.5em;
+
+
+body {
+  color: $primary-color-dark;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+  background-color: $background-color;
+}
+
+.button {
+  color: $background-color;
+  background-color: $button-inactive-color;
+  border-radius: $coupon-border-radius;
+  border-color: none;
+  border-style: none;
+
+  &:hover {
+    background-color: darken($primary-color-dark, 20%);
+    color: lighten($primary-color-light, 20%);
+  }
+
+  &:active {
+    background-color: darken($primary-color-dark, 20%);
+    color: lighten($primary-color-dark, 20%);
+  }
+}
+
+.coupon-cell {
+  border-radius: $coupon-border-radius;
+  max-width: 600px;
+  border-width: 0.15em;
+  overflow: hidden;
+  border-style: solid;
+  border-color: $primary-color-dark;
+
+  .coupon-header {
+    color: white;
+    background-color: $primary-color-dark;
+    height: $coupon-header-height;
+
+    padding-left: 1em;
+
+    // Centering
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .coupon-footer {
+    height: $coupon-header-height;
+    background-color: $primary-color-light;
+    position: relative;
+    border-style: solid;
+    border:none;
+    border-top: 0.15em solid $primary-color-dark;
+
+    .button {
+      position: absolute;
+      right: $coupon-padding;
+      top: $coupon-padding;
+      bottom: $coupon-padding;
+      margin: auto;
+      // float:right;
+      vertical-align: middle;
+      height: 80%;
+      width: 150px;
+    }
+  }
+
+  .coupon-content {
+    padding: $coupon-padding;
+    min-height: $coupon-content-height;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .coupon-content-block {
+      min-width: $coupon-content-height;
+      height:$coupon-content-height;
+
+      margin:$coupon-padding;
+    }
+
+    .coupon-content-text {
+      display:block;
+      flex: 1 1 50%;
+      max-height: $coupon-content-height;
+
+      // Using this solution as opposed to a jquery (or other) library
+      $font-size: 1em;
+      $line-height: 1;
+      $lines-to-show: $coupon-content-height / ($line-height * $font-size);
+      display: block; /* Fallback for non-webkit */
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+
+      height: $font-size*$line-height*$lines-to-show - $coupon-padding/2 ; /* Fallback for non-webkit */
+      font-size: $font-size;
+      line-height: $line-height;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      // More work needed for Edge compatibility
+      &:after {
+        letter-spacing: .10em;
+        content:"...";
+        position:absolute;
+        bottom:0;
+        right:0;
+        padding:0 10px 5px 45px
+      }
+    }
+
+    img {
+      border-radius: $coupon-border-radius;
+      max-height: $coupon-content-height;
+      max-width: $coupon-content-height;
+    }
+
+  }
+}
